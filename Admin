@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Bot Admin Panel | Full Dashboard + Analytics</title>
+    <!-- Tailwind CSS + Font Awesome + Chart.js for demo charts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <style>
+        /* smooth scroll and custom focus */
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        }
+        .card-hover {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -12px rgba(0, 0, 0, 0.2);
+        }
+        .pay-btn {
+            transition: all 0.2s;
+        }
+        .pay-btn:hover {
+            transform: scale(1.02);
+            background-color: #0d9488 !important;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-robot text-teal-600 text-2xl"></i>
+                    <span class="font-bold text-xl text-gray-800">Bot<span class="text-teal-600">Panel</span></span>
+                </div>
+                <div class="hidden md:flex space-x-6 text-sm font-medium">
+                    <a href="#features" class="hover:text-teal-600 transition">Features</a>
+                    <a href="#dashboard" class="hover:text-teal-600 transition">Dashboard Preview</a>
+                    <a href="#analytics" class="hover:text-teal-600 transition">Analytics</a>
+                    <a href="#purchase" class="hover:text-teal-600 transition">Buy Now</a>
+                </div>
+                <a href="#purchase" class="bg-teal-600 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-md hover:bg-teal-700 transition">KES 700</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white py-16 md:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">Normal Bot + Admin Panel</h1>
+            <p class="text-xl md:text-2xl mt-4 text-gray-200 max-w-3xl mx-auto">All-in-one dashboard with user logs, broadcast tools, real-time analytics, and full bot settings.</p>
+            <div class="mt-8 flex flex-wrap justify-center gap-4">
+                <div class="bg-white/10 backdrop-blur-sm rounded-full px-5 py-2 flex items-center gap-2"><i class="fas fa-chart-line text-teal-300"></i> <span>Analytics</span></div>
+                <div class="bg-white/10 backdrop-blur-sm rounded-full px-5 py-2 flex items-center gap-2"><i class="fas fa-users text-teal-300"></i> <span>User Logs</span></div>
+                <div class="bg-white/10 backdrop-blur-sm rounded-full px-5 py-2 flex items-center gap-2"><i class="fas fa-bullhorn text-teal-300"></i> <span>Broadcast</span></div>
+                <div class="bg-white/10 backdrop-blur-sm rounded-full px-5 py-2 flex items-center gap-2"><i class="fas fa-sliders-h text-teal-300"></i> <span>Bot Settings</span></div>
+            </div>
+            <div class="mt-12">
+                <a href="#purchase" class="inline-block bg-teal-500 hover:bg-teal-600 text-white font-bold py-3 px-8 rounded-full text-lg shadow-lg transition transform hover:scale-105">Purchase Now — KES 700</a>
+                <p class="text-gray-300 text-sm mt-4">✔ One-time payment ✔ Lifetime access ✔ Includes all future updates</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800">Everything you need to manage your bot</h2>
+                <p class="text-gray-500 mt-2">Powerful admin panel designed for efficiency and control</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-gray-50 p-6 rounded-2xl shadow-md card-hover border border-gray-100">
+                    <div class="w-12 h-12 bg-teal-100 rounded-xl flex items-center justify-center mb-4"><i class="fas fa-tachometer-alt text-teal-600 text-xl"></i></div>
+                    <h3 class="text-xl font-semibold">Full Dashboard</h3>
+                    <p class="text-gray-600 mt-2">Centralized interface with real-time stats, quick actions, and modular widgets.</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-2xl shadow-md card-hover border border-gray-100">
+                    <div class="w-12 h-12 bg-teal-100 rounded-xl flex items-center justify-center mb-4"><i class="fas fa-history text-teal-600 text-xl"></i></div>
+                    <h3 class="text-xl font-semibold">User Logs</h3>
+                    <p class="text-gray-600 mt-2">Track every user interaction, commands, errors, and login history with search & filters.</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-2xl shadow-md card-hover border border-gray-100">
+                    <div class="w-12 h-12 bg-teal-100 rounded-xl flex items-center justify-center mb-4"><i class="fas fa-broadcast-tower text-teal-600 text-xl"></i></div>
+                    <h3 class="text-xl font-semibold">Broadcast Tool</h3>
+                    <p class="text-gray-600 mt-2">Send mass messages, announcements, or updates to all bot users with scheduling option.</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-2xl shadow-md card-hover border border-gray-100">
+                    <div class="w-12 h-12 bg-teal-100 rounded-xl flex items-center justify-center mb-4"><i class="fas fa-chart-pie text-teal-600 text-xl"></i></div>
+                    <h3 class="text-xl font-semibold">Analytics</h3>
+                    <p class="text-gray-600 mt-2">Graphs on user growth, command usage, retention, and engagement metrics.</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-2xl shadow-md card-hover border border-gray-100">
+                    <div class="w-12 h-12 bg-teal-100 rounded-xl flex items-center justify-center mb-4"><i class="fas fa-cog text-teal-600 text-xl"></i></div>
+                    <h3 class="text-xl font-semibold">Bot Settings</h3>
+                    <p class="text-gray-600 mt-2">Change prefix, welcome messages, auto-reply, anti-spam, and API keys from one panel.</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-2xl shadow-md card-hover border border-gray-100">
+                    <div class="w-12 h-12 bg-teal-100 rounded-xl flex items-center justify-center mb-4"><i class="fas fa-shield-alt text-teal-600 text-xl"></i></div>
+                    <h3 class="text-xl font-semibold">Access Control</h3>
+                    <p class="text-gray-600 mt-2">Multi-role support: Admin, Moderator, Viewer – secure your bot operations.</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-2xl shadow-md card-hover border border-gray-100">
+                    <div class="w-12 h-12 bg-teal-100 rounded-xl flex items-center justify-center mb-4"><i class="fas fa-database text-teal-600 text-xl"></i></div>
+                    <h3 class="text-xl font-semibold">Export Logs</h3>
+                    <p class="text-gray-600 mt-2">Download user logs and analytics reports in CSV/JSON format for deeper analysis.</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-2xl shadow-md card-hover border border-gray-100">
+                    <div class="w-12 h-12 bg-teal-100 rounded-xl flex items-center justify-center mb-4"><i class="fas fa-headset text-teal-600 text-xl"></i></div>
+                    <h3 class="text-xl font-semibold">24/7 Support</h3>
+                    <p class="text-gray-600 mt-2">Documentation + priority email support included after purchase.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Preview Section (static mockup with Chart.js) -->
+    <section id="dashboard" class="py-16 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-gray-800">Live Dashboard Preview</h2>
+                <p class="text-gray-500">Real interface mockup – user logs, analytics, and settings all in one place</p>
+            </div>
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-200">
+                <div class="bg-gray-800 px-6 py-3 flex items-center space-x-2">
+                    <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                    <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                    <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                    <span class="text-gray-300 text-sm ml-2">bot-panel / Dashboard</span>
+                </div>
+                <div class="p-6">
+                    <div class="grid lg:grid-cols-3 gap-6">
+                        <!-- Stats cards -->
+                        <div class="bg-gradient-to-r from-teal-50 to-cyan-50 p-4 rounded-xl">
+                            <p class="text-gray-500 text-sm">Total Users</p>
+                            <p class="text-3xl font-bold text-teal-700">2,847</p>
+                            <span class="text-xs text-green-600"><i class="fas fa-arrow-up"></i> +12% this week</span>
+                        </div>
+                        <div class="bg-gradient-to-r from-indigo-50 to-blue-50 p-4 rounded-xl">
+                            <p class="text-gray-500 text-sm">Active Today</p>
+                            <p class="text-3xl font-bold text-indigo-700">1,234</p>
+                            <span class="text-xs text-gray-500">43% engagement</span>
+                        </div>
+                        <div class="bg-gradient-to-r from-amber-50 to-orange-50 p-4 rounded-xl">
+                            <p class="text-gray-500 text-sm">Broadcasts Sent</p>
+                            <p class="text-3xl font-bold text-amber-700">47</p>
+                            <span class="text-xs text-gray-500">last 30 days</span>
+                        </div>
+                    </div>
+                    <!-- Charts & logs mockup -->
+                    <div class="grid lg:grid-cols-2 gap-6 mt-8">
+                        <div>
+                            <h3 class="font-semibold text-gray-700 mb-3"><i class="fas fa-chart-line text-teal-500 mr-2"></i>User Growth (Analytics)</h3>
+                            <canvas id="userGrowthChart" height="180" style="max-height: 200px; width:100%"></canvas>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-gray-700 mb-3"><i class="fas fa-list-ul text-teal-500 mr-2"></i>Recent User Logs</h3>
+                            <div class="bg-gray-50 rounded-lg p-3 text-sm font-mono overflow-x-auto">
+                                <div class="border-b py-2"><span class="text-gray-500">[10:32:21]</span> <span class="text-teal-700">@john_doe</span> ran /start</div>
+                                <div class="border-b py-2"><span class="text-gray-500">[10:28:15]</span> <span class="text-teal-700">@alice_k</span> used /settings</div>
+                                <div class="border-b py-2"><span class="text-gray-500">[10:15:03]</span> <span class="text-teal-700">@bot_admin</span> sent broadcast #12</div>
+                                <div class="border-b py-2"><span class="text-gray-500">[09:58:44]</span> <span class="text-teal-700">@mike_t</span> error: invalid command</div>
+                                <div class="py-2"><span class="text-gray-500">[09:42:10]</span> <span class="text-teal-700">@sarah_j</span> logged in via web</div>
+                            </div>
+                            <button class="text-teal-600 text-sm mt-2 hover:underline"><i class="fas fa-download"></i> Export logs (CSV)</button>
+                        </div>
+                    </div>
+                    <!-- Bot settings panel mockup -->
+                    <div class="mt-8 border-t pt-6">
+                        <h3 class="font-semibold text-gray-700 mb-3"><i class="fas fa-sliders-h text-teal-500 mr-2"></i>Bot Settings Panel</h3>
+                        <div class="grid sm:grid-cols-2 gap-4 bg-gray-50 p-4 rounded-xl">
+                            <div><label class="block text-sm font-medium">Command Prefix</label><input type="text" value="/" class="mt-1 w-full border rounded-md p-2 bg-white"></div>
+                            <div><label class="block text-sm font-medium">Welcome Message</label><input type="text" value="Welcome to the bot!" class="mt-1 w-full border rounded-md p-2 bg-white"></div>
+                            <div><label class="block text-sm font-medium">Anti-Spam (sec)</label><input type="number" value="5" class="mt-1 w-full border rounded-md p-2 bg-white"></div>
+                            <div><label class="block text-sm font-medium">Log Level</label><select class="mt-1 w-full border rounded-md p-2 bg-white"><option>Info</option><option>Debug</option></select></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Analytics Preview -->
+    <section id="analytics" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-gray-800">Real-Time Analytics Dashboard</h2>
+                <p class="text-gray-500">Monitor commands, retention, and broadcast performance</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-gray-50 p-5 rounded-2xl shadow">
+                    <h3 class="font-semibold mb-2">Most Used Commands</h3>
+                    <canvas id="commandsChart" height="200"></canvas>
+                </div>
+                <div class="bg-gray-50 p-5 rounded-2xl shadow">
+                    <h3 class="font-semibold mb-2">Daily Active Users (Last 7 days)</h3>
+                    <canvas id="dailyActiveChart" height="200"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Purchase Section (Paystack Payment Link) -->
+    <section id="purchase" class="py-16 gradient-bg text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold">Get Full Access Now</h2>
+            <p class="text-gray-200 text-lg mt-3">One-time payment of <span class="font-bold text-white text-2xl">KES 700</span> — Lifetime license, no subscription.</p>
+            <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 md:p-8 mt-8 max-w-lg mx-auto">
+                <i class="fas fa-lock-open text-4xl text-teal-300 mb-3"></i>
+                <h3 class="text-2xl font-bold">Secure payment via Paystack</h3>
+                <p class="text-gray-200 text-sm mt-1">Cards, M-Pesa, Bank Transfer accepted</p>
+                <div class="mt-6">
+                    <!-- DIRECT PAYSTACK PAYMENT LINK (your existing link) -->
+                    <a href="https://paystack.shop/pay/kcic85rjbv" target="_blank" rel="noopener noreferrer" class="pay-btn inline-block bg-teal-500 hover:bg-teal-600 text-white font-bold py-4 px-8 rounded-xl text-xl shadow-xl transition w-full md:w-auto">
+                        <i class="fas fa-credit-card mr-2"></i> Pay KES 700 with Paystack
+                    </a>
+                </div>
+                <p class="text-gray-300 text-xs mt-4">After successful payment, you will be redirected to the download / access page automatically. You'll also receive an email with your credentials & setup guide.</p>
+            </div>
+            <div class="mt-8 flex justify-center space-x-6 text-gray-300">
+                <div><i class="fas fa-check-circle text-teal-400"></i> Instant access</div>
+                <div><i class="fas fa-check-circle text-teal-400"></i> 30-day money back</div>
+                <div><i class="fas fa-check-circle text-teal-400"></i> Free updates</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ / Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="flex justify-center space-x-8 mb-6">
+                <i class="fab fa-telegram text-2xl hover:text-teal-400 transition"></i>
+                <i class="fab fa-discord text-2xl hover:text-teal-400 transition"></i>
+                <i class="fab fa-whatsapp text-2xl hover:text-teal-400 transition"></i>
+            </div>
+            <p class="text-sm">© 2026 BotPanel — Full Admin Suite. All rights reserved. <br>Code: BOT02 | Support within 24h after purchase</p>
+            <p class="text-xs mt-3">This is a secure checkout page. Payment processed by Paystack.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Chart.js initialization for demo preview charts
+        document.addEventListener('DOMContentLoaded', function () {
+            // User growth chart
+            const ctx1 = document.getElementById('userGrowthChart')?.getContext('2d');
+            if (ctx1) {
+                new Chart(ctx1, {
+                    type: 'line',
+                    data: {
+                        labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+                        datasets: [{ label: 'Users', data: [1200, 1700, 2350, 2847], borderColor: '#14b8a6', tension: 0.3, fill: false }]
+                    },
+                    options: { responsive: true, maintainAspectRatio: true, plugins: { legend: { position: 'top' } } }
+                });
+            }
+            // Commands chart
+            const ctx2 = document.getElementById('commandsChart')?.getContext('2d');
+            if (ctx2) {
+                new Chart(ctx2, {
+                    type: 'bar',
+                    data: {
+                        labels: ['/start', '/help', '/stats', '/broadcast', '/settings'],
+                        datasets: [{ label: 'Usage count', data: [845, 623, 412, 189, 276], backgroundColor: '#0d9488' }]
+                    }
+                });
+            }
+            // Daily active chart
+            const ctx3 = document.getElementById('dailyActiveChart')?.getContext('2d');
+            if (ctx3) {
+                new Chart(ctx3, {
+                    type: 'line',
+                    data: {
+                        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                        datasets: [{ label: 'Active Users', data: [890, 1020, 1150, 1234, 1190, 980, 1050], borderColor: '#f59e0b', fill: false }]
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
